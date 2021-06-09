@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_16"
+    android:paddingStart="@dimen/margin_16"
+    android:paddingEnd="@dimen/margin_16">
+
+    <View
+        android:id="@+id/view0"
+        android:layout_width="@dimen/size_130"
+        android:layout_height="@dimen/margin_180"
+        android:background="@drawable/bg_placeholder_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="@dimen/size_80"
+        android:layout_height="@dimen/size_32"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:background="@drawable/bg_placeholder_chips"
+        app:layout_constraintStart_toEndOf="@+id/view0"
+        app:layout_constraintTop_toTopOf="@+id/view0"
+        tools:text="@string/title_movie" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="@dimen/size_200"
+        android:layout_height="@dimen/size_32"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:background="@drawable/bg_placeholder_chips"
+        app:layout_constraintStart_toEndOf="@+id/view0"
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        tools:text="20 03 2020" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="@dimen/size_150"
+        android:layout_height="@dimen/size_32"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_4"
+        android:background="@drawable/bg_placeholder_chips"
+        app:layout_constraintStart_toEndOf="@+id/view0"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="@dimen/size_130"
+        android:layout_height="@dimen/size_32"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_4"
+        android:background="@drawable/bg_placeholder_chips"
+        app:layout_constraintStart_toEndOf="@+id/view0"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
