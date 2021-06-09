@@ -64,7 +64,6 @@ class PopularActivity : AppCompatActivity() {
 
     private fun getPopularMovie() {
         popularViewModel.popularMovie.observe(this, { response ->
-            CoroutineScope(Dispatchers.Main).launch {
                 when (response) {
                     is Resource.Loading -> {
                         binding.progressBar.visibility = View.VISIBLE
@@ -82,7 +81,6 @@ class PopularActivity : AppCompatActivity() {
                         binding.incError.root.visibility = View.GONE
                     }
                 }
-            }
         })
     }
 
