@@ -64,24 +64,36 @@ class PopularActivity : AppCompatActivity() {
 
     private fun getPopularMovie() {
         popularViewModel.popularMovie.observe(this, { response ->
-                when (response) {
-                    is Resource.Loading -> {
-                        binding.progressBar.visibility = View.VISIBLE
-                        binding.incError.root.visibility = View.GONE
-                    }
-
-                    is Resource.Success -> {
-                        binding.progressBar.visibility = View.GONE
-                        binding.incError.root.visibility = View.GONE
-                        popularAdapter.differ.submitList(response.value.results)
-                    }
-
-                    is Resource.Error -> {
-                        binding.progressBar.visibility = View.GONE
-                        binding.incError.root.visibility = View.GONE
-                    }
+            when (response) {
+                is Resource.Loading -> {
+                    loadingState()
                 }
+
+                is Resource.Success -> {
+                    successState(response.value.results)
+                }
+
+                is Resource.Error -> {
+                    errorState()
+                }
+            }
         })
+    }
+
+    private fun loadingState() {
+        binding.progressBar.visibility = View.VISIBLE
+        binding.incError.root.visibility = View.GONE
+    }
+
+    private fun successState(list: List<ResultsItem>?) {
+        binding.progressBar.visibility = View.GONE
+        binding.incError.root.visibility = View.GONE
+        popularAdapter.differ.submitList(list)
+    }
+
+    private fun errorState() {
+        binding.progressBar.visibility = View.GONE
+        binding.incError.root.visibility = View.GONE
     }
 
     private fun showDetails(item: ResultsItem) {
